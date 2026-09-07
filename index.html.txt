@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charles Anyama Kalisto — Personal Website</title>
+    <style>
+        /* Base Styling & Typography */
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #8e44ad;
+            --text-color: #333333;
+            --bg-color: #fcfcfc;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            font-family: "Georgia", "Times New Roman", serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Container Layout */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header & Brand */
+        header {
+            border-bottom: 3px double var(--border-color);
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .site-title {
+            font-size: 2.5rem;
+            font-weight: normal;
+            margin: 10px 0 5px 0;
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            letter-spacing: -0.5px;
+        }
+
+        .site-title a {
+            color: var(--primary-color);
+        }
+
+        .site-tagline {
+            font-style: italic;
+            color: #666;
+            margin: 0;
+        }
+
+        /* Navigation Menu */
+        nav {
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 30px;
+            padding: 5px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            position: relative;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #4a5568;
+            display: block;
+            padding: 8px 0;
+        }
+
+        /* Dropdown menus mimicking the source site structure */
+        nav ul li:hover .dropdown {
+            display: block;
+        }
+
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            min-width: 200px;
+            z-index: 100;
+            padding: 5px 0;
+        }
+
+        .dropdown li {
+            margin: 0;
+            display: block;
+        }
+
+        .dropdown li a {
+            padding: 8px 15px;
+            font-size: 0.85rem;
+        }
+
+        .dropdown li a:hover {
+            background-color: #f7fafc;
+        }
+
+        /* Main Grid Structure */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .main-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Content Feed */
+        .content-area img.profile-img {
+            float: right;
+            margin: 0 0 20px 20px;
+            border: 1px solid var(--border-color);
+            padding: 5px;
+            max-width: 200px;
+        }
+
+        .post-preview {
+            margin-bottom: 40px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 30px;
+        }
+
+        .post-title {
+            font-size: 1.6rem;
+            margin: 0 0 10px 0;
+            font-weight: normal;
+        }
+
+        .post-meta {
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            font-size: 0.85rem;
+            color: #718096;
+            margin-bottom: 15px;
+        }
+
+        /* Sidebar Elements */
+        .sidebar-section {
+            margin-bottom: 35px;
+        }
+
+        .sidebar-title {
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 5px;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .sidebar-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar-list li {
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 50px;
+            border-top: 1px solid var(--border-color);
+            padding: 20px 0;
+            text-align: center;
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            font-size: 0.85rem;
+            color: #718096;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header mirroring the clean layout of peterturchin.com -->
+    <header>
+        <h1 class="site-title"><a href="#">Charles Anyama Kalisto</a></h1>
+        <p class="site-tagline">Researcher, Author, and Complexity Analyst</p>
+    </header>
+
+    <!-- Dropdown Navigation System matching Turchin's structure -->
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li>
+                <a href="#">Research ▾</a>
+                <ul class="dropdown">
+                    <li><a href="#">Current Projects</a></li>
+                    <li><a href="#">Academic Publications</a></li>
+                    <li><a href="#">Popular Articles</a></li>
+                    <li><a href="#">Academic Talks</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Books ▾</a>
+                <ul class="dropdown">
+                    <li><a href="#">Latest Release</a></li>
+                    <li><a href="#">Monographs</a></li>
+                    <li><a href="#">Edited Volumes</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Press & Media</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </nav>
+
+    <!-- Core Grid Layout -->
+    <div class="main-layout">
+        
+        <!-- Primary Content Area -->
+        <main class="content-area">
+            <article class="post-preview">
+                <img src="https://placeholder.com" alt="Charles Anyama Kalisto" class="profile-img">
+                <h2 class="post-title"><a href="#">Welcome to my Research Portal</a></h2>
+                <div class="post-meta">Published on September 7, 2026</div>
+                <p>I am a complexity researcher tracking evolutionary social dynamics, macro-historical trends, and computational sociology models. My current frameworks explore institutional resilience, regional development, and the mathematical modeling of socio-political ecosystems.</p>
+                <p>This space hosts my updated blog entries, academic preprints, data tracking modules, and media appearances. Feel free to browse through my latest research categories or my recent book releases listed on the sidebar.</p>
+            </article>
+
+            <article class="post-preview">
+                <h2 class="post-title"><a href="#">New Preprint: Modeling Structural Social Trends</a></h2>
+                <div class="post-meta">Published on August 28, 2026</div>
+                <p>This study covers long-range historical data analysis relating to institutional structures and wealth shifts. By processing demographic indexes alongside economic productivity markers, we evaluate potential inflection points in modern state matrices...</p>
+                <a href="#">Read the full article →</a>
+            </article>
+        </main>
+
+        <!-- Academic Sidebar Elements -->
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Featured Books</h3>
+                <ul class="sidebar-list">
+                    <li><strong>Dynamics of Change (2026)</strong> — An evolutionary perspective on regional infrastructure.</li>
+                    <li><strong>The Complexity Index (2024)</strong> — Mathematical modeling for contemporary social ecosystems.</li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Affiliations</h3>
+                <ul class="sidebar-list">
+                    <li>Research Fellow, Global Systems Institute</li>
+                    <li>Consultant, Macro-Historical Databank Project</li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Recent Updates</h3>
+                <ul class="sidebar-list">
+                    <li><a href="#">Keynote address at the 2026 Systems Conference</a></li>
+                    <li><a href="#">Interview with Media Outlet on economic resilience</a></li>
+                </ul>
+            </div>
+        </aside>
+
+    </div>
+
+    <!-- Academic Footer -->
+    <footer>
+        <p>&copy; 2026 Charles Anyama Kalisto. All Rights Reserved. Mimicking the structural design layout of peterturchin.com.</p>
+    </footer>
+</div>
+
+</body>
+</html>
